@@ -165,7 +165,28 @@ survey_short_veryshort%>%
   arrange(desc(annual_salary))
 ```
 
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+data(mpg)
+mpg%>%
+  ggplot(
+    aes(displ, hwy, colour = manufacturer, size = model, shape = year)
 
+data(mpg)
+mpg%>%
+  ggplot(
+    aes(displ, hwy, colour = manufacturer, size = model, shape = year)
+  ) + geom_point()
+```
+
+```{r}
+data(mpg)
+mpg%>%
+  ggplot(
+    aes(displ, hwy, colour = manufacturer, size = model, shape = year)
+  ) + geom_point()
+```
 
 
 
