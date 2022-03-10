@@ -187,6 +187,17 @@ mpg%>%
     aes(displ, hwy, colour = manufacturer, size = model, shape = year)
   ) + geom_point()
 ```
+```{r}
+install.packages("skimr")
+library(skimr)
+
+skim(survey)
+
+#task generate as many as data vis using survey dataset 
+
+
+```
+
 
 
 
