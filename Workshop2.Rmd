@@ -168,25 +168,27 @@ survey_short_veryshort%>%
 ```{r}
 install.packages("ggplot2")
 library(ggplot2)
-data(mpg)
-mpg%>%
-  ggplot(
-    aes(displ, hwy, colour = manufacturer, size = model, shape = year)
 
 data(mpg)
 mpg%>%
   ggplot(
-    aes(displ, hwy, colour = manufacturer, size = model, shape = year)
-  ) + geom_point()
+    aes(displ, hwy, colour = manufacturer, size = model, shape = year)+
+  geom_point()
+  )
 ```
 
-```{r}
-data(mpg)
-mpg%>%
-  ggplot(
-    aes(displ, hwy, colour = manufacturer, size = model, shape = year)
-  ) + geom_point()
-```
+fastfood%>%
+  ggplot(aes(
+    total_fat, restaurant, fill=restaurant))+
+  geom_col()+
+  labs(
+    title = "Total fat per restaurant",
+    caption = "Figure 1",
+    x = "Total fat",
+    y = "Restaurant"
+  )
+
+
 ```{r}
 install.packages("skimr")
 library(skimr)
@@ -195,6 +197,44 @@ skim(survey)
 
 #task generate as many as data vis using survey dataset 
 
+
+```
+
+```{r}
+
+data(mpg)
+mpg%>% ggplot( #ggplot() function
+  aes(displ, hwy, colour = drv)) + #aesthetics
+  geom_point() #geometry
+
+data(mpg)
+mpg%>% ggplot( #ggplot() function
+  aes(displ, hwy, colour = class, shape=drv, size=drv
+      )) + #aesthetics
+  geom_point() #geometry
+
+#one discreet, one continuous
+
+disccon<- ggplot(mpg, aes(class, hwy))
+disccon + geom_boxplot() 
+
+#two continuous
+
+twocont<- ggplot(mpg, aes(cty, hwy))
+
+#one discrete
+d <- ggplot(mpg, aes(fl))
+
+```
+
+```{r}
+summary(survey)
+install.packages("skimr")
+
+library(skimr)
+skim(survey)
+
+#generate as many as possible data  beautiful and meaningful data viz using  survey dataset
 
 ```
 
